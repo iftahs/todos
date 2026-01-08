@@ -1,0 +1,234 @@
+
+[1m[46m RUN [49m[22m [36mv4.0.16 [39m[90mC:/Users/Iftah Saar/Desktop/Home assignment/Chargeflow‏/todos[39m
+
+ [32m✓[39m src/api/users.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m src/api/todos.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m src/components/Todo/Todo.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 34[2mms[22m[39m
+ [31m❯[39m src/components/ui/Button/Button.test.tsx [2m([22m[2m3 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 47[2mms[22m[39m
+     [32m✓[39m renders with children[32m 28[2mms[22m[39m
+[31m     [31m×[31m handles onClick event[39m[32m 11[2mms[22m[39m
+     [32m✓[39m renders additional props[32m 6[2mms[22m[39m
+ [31m❯[39m src/components/UserList.test.tsx [2m([22m[2m4 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 43[2mms[22m[39m
+     [32m✓[39m renders loading state[32m 22[2mms[22m[39m
+     [32m✓[39m renders error state[32m 2[2mms[22m[39m
+     [32m✓[39m renders list of users[32m 6[2mms[22m[39m
+[31m     [31m×[31m navigates to user tasks on click[39m[32m 11[2mms[22m[39m
+ [32m✓[39m src/hooks/useUsers.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 175[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 2 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m src/components/UserList.test.tsx[2m > [22mUserList Component[2m > [22mnavigates to user tasks on click
+[31m[1mTestingLibraryElementError[22m: Found multiple elements with the text: User 1
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<h3[31m
+  [33mclass[31m=[32m"_name_0ee71f"[31m
+[36m>[31m
+  [0mUser 1[0m
+[36m</h3>[31m
+
+Ignored nodes: comments, script, style
+[36m<h3[31m
+  [33mclass[31m=[32m"_name_0ee71f"[31m
+[36m>[31m
+  [0mUser 1[0m
+[36m</h3>[31m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"_loading_0ee71f"[31m
+    [36m>[31m
+      [0mLoading users...[0m
+    [36m</div>[31m
+  [36m</div>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"_error_0ee71f"[31m
+    [36m>[31m
+      [0mError loading users: [0m
+      [0mFailed to fetch[0m
+    [36m</div>[31m
+  [36m</div>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"_grid_0ee71f"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"
+        _card_09a328 
+         
+        _interactive_09a328 
+        
+      "[31m
+      [36m>[31m
+        [36m<span[31m
+          [33mclass[31m=[32m"_username_0ee71f"[31m
+        [36m>[31m
+          [0m@[0m
+          [0muser1[0m
+        [36m</span>[31m
+        [36m<h3[31m
+          [33mclass[31m=[32m"_name_0ee71f"[31m
+        [36m>[31m
+          [0mUser 1[0m
+        [36m</h3>[31m
+        [36m<span[31m
+          [33mclass[31m=[32m"_email_0ee71f"[31m
+        [36m>[31m
+          [0muser1@example.com[0m
+        [36m</span>[31m
+        [36m<button[31m
+          [33mclass[31m=[32m"_button_a3f4a7 "[31m
+        [36m>[31m
+          [0mShow TODOs[0m
+        [36m</button>[31m
+      [36m</div>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"
+        _card_09a328 
+         
+        _interactive_09a328 
+        
+      "[31m
+      [36m>[31m
+        [36m<span[31m
+          [33mclass[31m=[32m"_username_0ee71f"[31m
+        [36m>[31m
+          [0m@[0m
+          [0muser2[0m
+        [36m</span>[31m
+        [36m<h3[31m
+          [33mclass[31m=[32m"_name_0ee71f"[31m
+        [36m>[31m
+          [0mUser 2[0m
+        [36m</h3>[31m
+        [36m<span[31m
+          [33mclass[31m=[32m"_email_0ee71f"[31m
+        [36m>[31m
+          [0muser2@example.com[0m
+        [36m</span>[31m
+        [36m<button[31m
+          [33mclass[31m=[32m"_button_a3f4a7 "[31m
+        [36m>[31m
+          [0mShow TODOs[0m
+        [36m</button>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"_grid_0ee71f"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"
+        _card_09a328 
+         
+        _interactive_09a328 
+        
+      "[31m
+      [36m>[31m
+        [36m<span[31m
+          [33mclass[31m=[32m"_username_0ee71f"[31m
+        [36m>[31m
+          [0m@[0m
+          [0muser1[0m
+        [36m</span>[31m
+        [36m<h3[31m
+          [33mclass[31m=[32m"_name_0ee71f"[31m
+        [36m>[31m
+          [0mUser 1[0m
+        [36m</h3>[31m
+        [36m<span[31m
+          [33mclass[31m=[32m"_email_0ee71f"[31m
+        [36m>[31m
+          [0muser1@example.com[0m
+        [36m</span>[31m
+        [36m<button[31m
+          [33mclass[31m=[32m"_button_a3f4a7 "[31m
+        [36m>[31m
+          [0mShow TODOs[0m
+        [36m</button>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m getElementError node_modules/@testing-library/dom/dist/query-helpers.js:[2m20:35[22m[39m
+[90m [2m❯[22m getMultipleElementsFoundError node_modules/@testing-library/dom/dist/query-helpers.js:[2m23:10[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m55:13[22m[39m
+[90m [2m❯[22m getByText node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/components/UserList.test.tsx:[2m85:32[22m[39m
+    [90m 83| [39m        [34mrender[39m([33m<[39m[33mUserList[39m [33m/[39m[33m>[39m[33m,[39m { wrapper[33m:[39m [33mBrowserRouter[39m })[33m;[39m
+    [90m 84| [39m
+    [90m 85| [39m        fireEvent[33m.[39m[34mclick[39m(screen[33m.[39m[34mgetByText[39m([32m'User 1'[39m))[33m;[39m
+    [90m   | [39m                               [31m^[39m
+    [90m 86| [39m        [34mexpect[39m(mockNavigate)[33m.[39m[34mtoHaveBeenCalledWith[39m([32m'/users/1/tasks'[39m)[33m;[39m
+    [90m 87| [39m    })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/components/ui/Button/Button.test.tsx[2m > [22mButton Component[2m > [22mhandles onClick event
+[31m[1mTestingLibraryElementError[22m: Found multiple elements with the text: Click Me
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<button[31m
+  [33mclass[31m=[32m"_button_a3f4a7 "[31m
+[36m>[31m
+  [0mClick Me[0m
+[36m</button>[31m
+
+Ignored nodes: comments, script, style
+[36m<button[31m
+  [33mclass[31m=[32m"_button_a3f4a7 "[31m
+[36m>[31m
+  [0mClick Me[0m
+[36m</button>[31m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<button[31m
+      [33mclass[31m=[32m"_button_a3f4a7 "[31m
+    [36m>[31m
+      [0mClick Me[0m
+    [36m</button>[31m
+  [36m</div>[31m
+  [36m<div>[31m
+    [36m<button[31m
+      [33mclass[31m=[32m"_button_a3f4a7 "[31m
+    [36m>[31m
+      [0mClick Me[0m
+    [36m</button>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m getElementError node_modules/@testing-library/dom/dist/query-helpers.js:[2m20:35[22m[39m
+[90m [2m❯[22m getMultipleElementsFoundError node_modules/@testing-library/dom/dist/query-helpers.js:[2m23:10[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m55:13[22m[39m
+[90m [2m❯[22m getByText node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/components/ui/Button/Button.test.tsx:[2m15:32[22m[39m
+    [90m 13| [39m        [34mrender[39m([33m<[39m[33mButton[39m [33monClick[39m[33m=[39m[33m{[39mhandleClick[33m}[39m[33m>[39mClick Me[33m<[39m[33m/[39m[33mButton[39m[33m>[39m)[33m;[39m
+    [90m 14| [39m
+    [90m 15| [39m        fireEvent[33m.[39m[34mclick[39m(screen[33m.[39m[34mgetByText[39m([32m'Click Me'[39m))[33m;[39m
+    [90m   | [39m                               [31m^[39m
+    [90m 16| [39m        [34mexpect[39m(handleClick)[33m.[39m[34mtoHaveBeenCalledTimes[39m([34m1[39m)[33m;[39m
+    [90m 17| [39m    })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m4 passed[39m[22m[90m (6)[39m
+[2m      Tests [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m12 passed[39m[22m[90m (14)[39m
+[2m   Start at [22m 00:37:36
+[2m   Duration [22m 2.90s[2m (transform 2.44s, setup 0ms, import 5.69s, tests 308ms, environment 7.51s)[22m
+
