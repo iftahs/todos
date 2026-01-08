@@ -1,0 +1,28 @@
+.button {
+  padding: var(--spacing-2) var(--spacing-4);
+  background-color: var(--accent-color);
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color var(--transition-fast),
+    transform var(--transition-fast);
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}

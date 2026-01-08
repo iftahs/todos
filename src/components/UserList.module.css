@@ -1,0 +1,39 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-4);
+}
+
+.username {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-1);
+}
+
+.email {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-4);
+}
+
+.loading,
+.error,
+.empty {
+  padding: var(--spacing-8);
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border-radius: 8px;
+}
+
+.error {
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}

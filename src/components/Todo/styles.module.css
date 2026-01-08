@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  background: var(--bg-card);
+  padding: var(--spacing-6);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  min-height: 200px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+  padding-bottom: var(--spacing-2);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.title {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.todoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3);
+  background: var(--bg-secondary);
+  border-radius: 6px;
+  transition: background-color var(--transition-fast);
+}
+
+.todoItem:hover {
+  background-color: rgba(30, 41, 59, 0.8);
+}
+
+.todoText {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+.completedText {
+  color: var(--text-secondary);
+  text-decoration: line-through;
+}
+
+.emptyState {
+  text-align: center;
+  color: var(--text-secondary);
+  font-style: italic;
+  padding: var(--spacing-8);
+}
