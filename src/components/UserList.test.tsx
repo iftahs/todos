@@ -9,9 +9,9 @@ const mockedUseUsers = vi.mocked(useUsersHook.useUsers);
 
 const mockNavigate = vi.fn();
 vi.mock('react-router-dom', async () => {
-    const actual = await vi.importActual('react-router-dom');
+    const actual = await vi.importActual<typeof import('react-router-dom')>('react-router-dom');
     return {
-        ...(actual as any),
+        ...actual,
         useNavigate: () => mockNavigate,
     };
 });
@@ -28,10 +28,10 @@ describe('UserList Component', () => {
             data: undefined,
             error: null,
             isSuccess: false,
-        } as any);
+        } as unknown as ReturnType<typeof useUsersHook.useUsers>);
 
         render(<UserList />, { wrapper: BrowserRouter });
-        expect(screen.getByText(/Loading users/i)).toBeDefined();
+        expect(screen.getByRole('status')).toBeDefined();
     });
 
     it('renders error state', () => {
@@ -41,7 +41,7 @@ describe('UserList Component', () => {
             error: new Error('Failed to fetch'),
             data: undefined,
             isSuccess: false,
-        } as any);
+        } as unknown as ReturnType<typeof useUsersHook.useUsers>);
 
         render(<UserList />, { wrapper: BrowserRouter });
         expect(screen.getByText(/Error loading users/i)).toBeDefined();
@@ -59,7 +59,7 @@ describe('UserList Component', () => {
             data: mockUsers,
             error: null,
             isSuccess: true,
-        } as any);
+        } as unknown as ReturnType<typeof useUsersHook.useUsers>);
 
         render(<UserList />, { wrapper: BrowserRouter });
 
@@ -78,7 +78,7 @@ describe('UserList Component', () => {
             data: mockUsers,
             error: null,
             isSuccess: true,
-        } as any);
+        } as unknown as ReturnType<typeof useUsersHook.useUsers>);
 
         render(<UserList />, { wrapper: BrowserRouter });
 

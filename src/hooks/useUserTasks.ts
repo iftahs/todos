@@ -6,16 +6,20 @@ import { useFilters } from './useFilters';
 export const useUserTasks = () => {
     const { userId } = useParams<{ userId: string }>();
     const navigate = useNavigate();
-    const numericUserId = Number(userId);
 
-    const { hideCompleted, toggleHideCompleted } = useFilters();
-    const { selectedUserDetails: user, isLoading: isUserLoading } = useUsers(numericUserId);
+    const numericUserId = userId && /^\d+$/.test(userId) ? Number(userId) : NaN;
+    const isInvalidId = Number.isNaN(numericUserId);
+
+    const { hideCompleted, toggleHideCompleted } = useFilters(isInvalidId ? undefined : numericUserId);
+    const { selectedUserDetails: user, isLoading: isUserLoading } = useUsers(isInvalidId ? undefined : numericUserId);
 
     useEffect(() => {
-        if (!isUserLoading && !user) {
-            navigate('/');
+        if (isInvalidId) {
+            navigate('/', { replace: true });
+        } else if (!isUserLoading && !user) {
+            navigate('/', { replace: true });
         }
-    }, [isUserLoading, user, navigate]);
+    }, [isInvalidId, isUserLoading, user, navigate]);
 
     const onBack = () => navigate('/');
 
@@ -26,6 +30,6 @@ export const useUserTasks = () => {
         hideCompleted,
         toggleHideCompleted,
         onBack,
-        isInvalidId: !numericUserId
+        isInvalidId
     };
 };

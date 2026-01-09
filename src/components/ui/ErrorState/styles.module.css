@@ -1,0 +1,19 @@
+.error {
+  color: var(--danger);
+  background: var(--bg-card);
+  border: 1px solid var(--danger);
+  border-radius: 8px;
+  padding: var(--spacing-4);
+  text-align: center;
+  margin: var(--spacing-4) 0;
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: var(--spacing-2);
+}
+
+.message {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}

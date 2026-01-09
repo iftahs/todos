@@ -1,6 +1,9 @@
+import noTasksImage from '../../assets/no-tasks-funny.png';
 import { useTodos } from '../../hooks/useTodos';
 import Todo from './Todo';
 import { Checkbox } from '../ui/Checkbox';
+import { LoadingState } from '../../components/ui/LoadingState';
+import { ErrorState } from '../../components/ui/ErrorState';
 import styles from './styles.module.css';
 
 interface TodoListProps {
@@ -13,19 +16,16 @@ export default function TodoList({ userId, hideCompleted, onToggleHideCompleted 
     const { data: todos, isLoading, isError, error } = useTodos(userId);
 
     if (isLoading) {
-        return (
-            <div className={styles.container}>
-                <div className={styles.emptyState}>Loading tasks...</div>
-            </div>
-        );
+        return <LoadingState />;
     }
 
     if (isError) {
         return (
             <div className={styles.container}>
-                <div className={`${styles.emptyState} ${styles.error}`}>
-                    {error instanceof Error ? error.message : 'Error loading todos'}
-                </div>
+                <ErrorState
+                    title="Error loading todos"
+                    message={error instanceof Error ? error.message : 'Error loading todos'}
+                />
             </div>
         );
     }
@@ -33,7 +33,14 @@ export default function TodoList({ userId, hideCompleted, onToggleHideCompleted 
     if (!todos || todos.length === 0) {
         return (
             <div className={styles.container}>
-                <div className={styles.emptyState}>No tasks found for this user.</div>
+                <div className={styles.emptyState}>
+                    <img
+                        src={noTasksImage}
+                        alt="No tasks found"
+                        style={{ maxWidth: '300px', marginBottom: '1rem' }}
+                    />
+                    <p>No tasks found for this user.</p>
+                </div>
             </div>
         );
     }

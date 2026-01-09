@@ -8,9 +8,9 @@ vi.mock('axios');
 describe('fetchUsers', () => {
     it('should fetch users successfully', async () => {
         const mockUsers: User[] = [
-            { id: 1, name: 'John Doe', email: 'john@example.com', address: { street: 'Main St', city: 'NY', zipcode: '10001', geo: { lat: '0', lng: '0' } }, phone: '123', website: 'com', company: { name: 'Co', catchPhrase: 'phrase', bs: 'bs' }, username: 'johndoe' },
+            { id: 1, name: 'John Doe', email: 'john@example.com', address: { street: 'Main St', suite: 'Apt. 1', city: 'NY', zipcode: '10001', geo: { lat: '0', lng: '0' } }, phone: '123', website: 'com', company: { name: 'Co', catchPhrase: 'phrase', bs: 'bs' }, username: 'johndoe' },
         ];
-        (axios.get as any).mockResolvedValue({ data: mockUsers });
+        vi.mocked(axios.get).mockResolvedValue({ data: mockUsers });
 
         const result = await fetchUsers();
 
@@ -20,7 +20,7 @@ describe('fetchUsers', () => {
 
     it('should handle errors', async () => {
         const errorMessage = 'Network Error';
-        (axios.get as any).mockRejectedValue(new Error(errorMessage));
+        vi.mocked(axios.get).mockRejectedValue(new Error(errorMessage));
 
         await expect(fetchUsers()).rejects.toThrow(errorMessage);
     });

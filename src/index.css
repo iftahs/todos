@@ -1,5 +1,4 @@
 :root {
-  /* Dark Theme Palette */
   --bg-primary: #0f172a;
   --bg-secondary: #1e293b;
   --bg-card: #334155;
@@ -11,7 +10,6 @@
   --success: #22c55e;
   --border-color: #475569;
 
-  /* Spacing */
   --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
   --spacing-3: 0.75rem;
@@ -19,7 +17,6 @@
   --spacing-6: 1.5rem;
   --spacing-8: 2rem;
 
-  /* Animation */
   --transition-fast: 0.2s ease;
   --transition-medium: 0.3s ease;
 }
@@ -50,7 +47,6 @@ a {
   color: inherit;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }

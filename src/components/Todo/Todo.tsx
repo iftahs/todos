@@ -11,7 +11,7 @@ export default function Todo({ todo }: TodoProps) {
         <div className={styles.todoItem}>
             <Checkbox
                 checked={todo.completed}
-                onChange={() => { }}
+                readOnly
                 aria-label={`Mark ${todo.title} as ${todo.completed ? 'incomplete' : 'complete'}`}
             />
             <span className={`${styles.todoText} ${todo.completed ? styles.completedText : ''}`}>
